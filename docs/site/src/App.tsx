@@ -18,12 +18,30 @@ export function App() {
         {APPS.map((app) => (
           <li
             key={app.slug}
-            className="rounded-xl border border-slate-800 bg-slate-900/60 p-5 transition-colors hover:border-sky-400"
+            className="flex flex-col gap-3 rounded-xl border border-slate-800 bg-slate-900/60 p-5 transition-colors hover:border-sky-400"
           >
             <a href={`/${app.slug}/`} className="flex flex-col gap-2">
               <span className="text-xl font-semibold text-slate-100">{app.name}</span>
               <span className="text-sm text-slate-400">{app.description}</span>
               <span className="text-sm text-sky-300">Open docs →</span>
+            </a>
+            <ul aria-label="Technologies" className="flex flex-wrap gap-2">
+              {app.tags.map((tag) => (
+                <li
+                  key={tag}
+                  className="rounded-full border border-slate-700 px-2.5 py-0.5 text-xs text-slate-300"
+                >
+                  {tag}
+                </li>
+              ))}
+            </ul>
+            <a
+              href={app.source}
+              className="text-xs text-slate-400 underline-offset-4 hover:text-sky-300 hover:underline"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Source ↗
             </a>
           </li>
         ))}

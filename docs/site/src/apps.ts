@@ -2,6 +2,8 @@ export interface DocApp {
   slug: string;
   name: string;
   description: string;
+  tags: string[];
+  source: string;
 }
 
 // Registry of documented projects. Each slug matches the R2 prefix
@@ -12,15 +14,28 @@ export const APPS: DocApp[] = [
     slug: "tasky",
     name: "tasky",
     description: "Task management — app, API and docs.",
+    tags: ["Java", "Spring Boot", "React", "TypeScript"],
+    source: "https://github.com/lucasvmigotto/tasky",
   },
   {
     slug: "rusteams",
     name: "rusteams",
     description: "Team management CLI and services in Rust.",
+    tags: ["Rust"],
+    source: "https://github.com/lucasvmigotto/rusteams",
   },
   {
     slug: "devenv",
     name: "devenv",
     description: "Reproducible, non-root DevContainer images.",
+    tags: ["Docker", "Dev Containers"],
+    source: "https://github.com/lucasvmigotto/devenv",
+  },
+  {
+    slug: "starsky",
+    name: "starsky",
+    description: "Personalized night-sky poster generator.",
+    tags: ["Python", "React", "TypeScript"],
+    source: "https://github.com/lucasvmigotto/starsky",
   },
 ];
