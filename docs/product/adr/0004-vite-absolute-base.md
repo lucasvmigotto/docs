@@ -1,6 +1,7 @@
 # 0004 — Absolute Vite base plus Router basename per app
 
-* Status: proposed
+* Status: accepted
+* Superseded in part by [0005](0005-no-router-basename-under-prefix.md) — the Router `basename` clause; Vite `base` still stands.
 * Date: 2026-09-29
 
 ## Context and drivers
