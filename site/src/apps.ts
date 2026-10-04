@@ -32,6 +32,13 @@ export const APPS: DocApp[] = [
     source: "https://github.com/lucasvmigotto/devenv",
   },
   {
+    slug: "dottod",
+    name: "dottod",
+    description: "Debian workstation bootstrap in plain bash.",
+    tags: ["Bash", "Debian", "Dev Containers"],
+    source: "https://github.com/lucasvmigotto/dottod",
+  },
+  {
     slug: "starsky",
     name: "starsky",
     description: "Personalized night-sky poster generator.",
