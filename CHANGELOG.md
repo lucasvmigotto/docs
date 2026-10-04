@@ -5,6 +5,12 @@ the Conventional Commits since the last tag by `scripts/release.py`. The
 site's version lives in `site/package.json` and is bumped by the same
 script.
 
+## 0.3.0 — 2026-10-04
+
+### Added
+
+- **hub:** register ai-gent
+
 ## 0.2.0 — 2026-10-04
 
 ### Added
