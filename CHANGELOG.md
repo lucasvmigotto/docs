@@ -2,7 +2,7 @@
 
 Releases are plain SemVer git tags (`0.1.0`, no `v` prefix), decided from
 the Conventional Commits since the last tag by `scripts/release.py`. The
-site's version lives in `docs/site/package.json` and is bumped by the same
+site's version lives in `site/package.json` and is bumped by the same
 script.
 
 ## Unreleased

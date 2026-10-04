@@ -3,7 +3,7 @@ name: release
 # Every push to main runs the checks, then releases if the commits since the
 # last tag warrant it. scripts/release.py decides: feat → minor; fix, perf,
 # refactor → patch; "type!:" or BREAKING CHANGE → major; anything else → no
-# release. A release bumps docs/site/package.json, promotes CHANGELOG.md's
+# release. A release bumps site/package.json, promotes CHANGELOG.md's
 # "## Unreleased" (or generates a section), commits "chore(release): X.Y.Z",
 # tags X.Y.Z and publishes a GitHub Release. docs-hub-ci.yml then deploys the
 # tagged tree like any other main push.
@@ -67,7 +67,7 @@ jobs:
           git config user.email "41898496+github-actions[bot]@users.noreply.github.com"
           version="$(python3 scripts/release.py)"
           python3 scripts/release.py --notes "$version" >"$RUNNER_TEMP/notes.md"
-          git add CHANGELOG.md docs/site/package.json
+          git add CHANGELOG.md site/package.json
           git commit -m "chore(release): $version"
           git tag -a "$version" -m "$version"
           # Rejected (and nothing published) if main moved since this run

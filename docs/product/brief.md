@@ -65,7 +65,7 @@ Grouped by area; **MVP** is the smallest set that delivers G1–G4 end to end.
 - Later — Generated Open Graph preview image per share (`index.html` currently carries a TODO for this).
 
 **Registry**
-- MVP — A static registry in the landing source (`docs/site/src/apps.ts`) mapping `slug → name, description, tech tags, source URL`. The slug is the R2 prefix.
+- MVP — A static registry in the landing source (`site/src/apps.ts`) mapping `slug → name, description, tech tags, source URL`. The slug is the R2 prefix.
 - Later — A registry that is not a code change (CMS or generated from the project repos).
 
 **LLM index**
