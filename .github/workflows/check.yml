@@ -44,7 +44,7 @@ jobs:
 
       - name: Assert no app prefixes emitted
         run: |
-          for slug in tasky rusteams devenv starsky; do
+          for slug in tasky rusteams devenv starsky dottod; do
             if [ -e "site/dist/$slug" ]; then
               echo "::error::landing must not emit $slug/ prefix (ADR 0001)"
               exit 1
