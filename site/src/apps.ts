@@ -45,12 +45,4 @@ export const APPS: DocApp[] = [
     tags: ["Python", "React", "TypeScript"],
     source: "https://github.com/lucasvmigotto/starsky",
   },
-  {
-    slug: "dottod",
-    name: "dottod",
-    description:
-      "Reproducible Debian workstation bootstrap — dotfiles, fonts, editor, CLI tooling.",
-    tags: ["Bash", "Docker"],
-    source: "https://github.com/lucasvmigotto/dottod",
-  },
 ];
