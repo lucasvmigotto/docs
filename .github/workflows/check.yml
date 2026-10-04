@@ -1,0 +1,60 @@
+name: check
+
+# The docs hub's verification gate: runs from docs-hub-ci.yml (PRs and
+# branch pushes) and from release.yml before it tags. Kept separate so both
+# callers share one definition of "verified".
+on:
+  workflow_call:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: check-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: "1"
+
+      - name: Install dependencies
+        run: bun install --frozen-lockfile
+        working-directory: docs/site
+
+      - name: Lint (Biome)
+        run: bun run lint
+        working-directory: docs/site
+
+      - name: Typecheck
+        run: bun run typecheck
+        working-directory: docs/site
+
+      - name: Build
+        run: bun run build
+        working-directory: docs/site
+        env:
+          VITE_APP_SITE_NAME: ${{ vars.VITE_APP_SITE_NAME }}
+
+      - name: Assert no app prefixes emitted
+        run: |
+          for slug in tasky rusteams devenv starsky; do
+            if [ -e "docs/site/dist/$slug" ]; then
+              echo "::error::landing must not emit $slug/ prefix (ADR 0001)"
+              exit 1
+            fi
+          done
+          test -f docs/site/dist/index.html
+
+      - name: Upload build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: docs-hub-dist
+          path: docs/site/dist
+          retention-days: 7
