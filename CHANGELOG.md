@@ -5,6 +5,16 @@ the Conventional Commits since the last tag by `scripts/release.py`. The
 site's version lives in `site/package.json` and is bumped by the same
 script.
 
+## 0.2.0 — 2026-10-04
+
+### Added
+
+- **hub:** register dottod
+
+### Fixed
+
+- **hub:** drop the duplicated dottod entry
+
 ## 0.1.0 — 2026-10-04
 
 ### Added
