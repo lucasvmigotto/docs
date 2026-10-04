@@ -45,4 +45,12 @@ export const APPS: DocApp[] = [
     tags: ["Python", "React", "TypeScript"],
     source: "https://github.com/lucasvmigotto/starsky",
   },
+  {
+    slug: "ai-gent",
+    name: "ai-gent",
+    description:
+      "Skills and plugins for Claude Code and opencode — install, reference, contributing.",
+    tags: ["Claude Code", "OpenCode", "Code Agents"],
+    source: "https://github.com/lucasvmigotto/ai-gent",
+  },
 ];
