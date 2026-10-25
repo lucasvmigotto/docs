@@ -53,4 +53,12 @@ export const APPS: DocApp[] = [
     tags: ["Claude Code", "OpenCode", "Code Agents"],
     source: "https://github.com/lucasvmigotto/ai-gent",
   },
+  {
+    slug: "rstory",
+    name: "rstory",
+    description:
+      "A small, private clipboard history for Linux (Wayland and X11) — install, use, reference.",
+    tags: ["Rust", "Wayland", "X11", "GNOME"],
+    source: "https://github.com/lucasvmigotto/rstory",
+  },
 ];
